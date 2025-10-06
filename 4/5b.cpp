@@ -1,3 +1,9 @@
+#include <iostream>
+#include <queue>
+#include <unordered_map>
+using namespace std;
+
+
 class StackOneQueue {
     queue<int> q;
 
@@ -33,14 +39,7 @@ public:
     }
 };
 int main() {
-    cout << "--- Stack using Two Queues ---\n";
-    StackTwoQueues s1;
-    s1.push(10);
-    s1.push(20);
-    s1.push(30);
-    cout << "Top: " << s1.top() << endl; // 30
-    s1.pop();
-    cout << "Top after pop: " << s1.top() << endl; // 20
+   
 
     cout << "\n--- Stack using One Queue ---\n";
     StackOneQueue s2;
