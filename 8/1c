@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+// Binary tree node
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
+};
+
+// Post-order traversal: Left -> Right -> Root
+void postOrder(Node* root) {
+    if (root == nullptr) return;
+
+    postOrder(root->left);      // traverse left
+    postOrder(root->right);     // traverse right
+    cout << root->data << " ";  // visit root
+}
+
+int main() {
+    // Create a simple tree
+    //       1
+    //      / \
+    //     2   3
+    //    / \
+    //   4   5
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+
+    cout << "Post-order traversal: ";
+    postOrder(root);
+    cout << endl;
+
+    return 0;
+}

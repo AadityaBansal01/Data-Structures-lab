@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+// Binary tree node
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+    
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
+};
+
+// Pre-order traversal: Root -> Left -> Right
+void preOrder(Node* root) {
+    if (root == nullptr) return;
+
+    cout << root->data << " "; // visit root
+    preOrder(root->left);     // traverse left
+    preOrder(root->right);    // traverse right
+}
+
+int main() {
+    // Create a simple tree
+    //       1
+    //      / \
+    //     2   3
+    //    / \
+    //   4   5
+    Node* root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+
+    cout << "Pre-order traversal: ";
+    preOrder(root);
+    cout << endl;
+
+    return 0;
+}

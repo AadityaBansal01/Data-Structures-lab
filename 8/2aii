@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+// BST Node
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
+};
+
+// Iterative search in BST
+bool searchBSTIterative(Node* root, int key) {
+    Node* current = root;
+    while (current != nullptr) {
+        if (current->data == key) return true; // found
+        else if (key < current->data) current = current->left;  // go left
+        else current = current->right;                           // go right
+    }
+    return false; // not found
+}
+
+int main() {
+    // Manually create BST:
+    //       50
+    //      /  \
+    //     30   70
+    //    / \   / \
+    //   20 40 60 80
+    Node* root = new Node(50);
+    root->left = new Node(30);
+    root->right = new Node(70);
+    root->left->left = new Node(20);
+    root->left->right = new Node(40);
+    root->right->left = new Node(60);
+    root->right->right = new Node(80);
+
+    int key = 60;
+    cout << key << " is " << (searchBSTIterative(root, key) ? "Found" : "Not Found") << endl;
+
+    key = 25;
+    cout << key << " is " << (searchBSTIterative(root, key) ? "Found" : "Not Found") << endl;
+
+    return 0;
+}

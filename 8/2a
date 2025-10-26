@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+// BST Node
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        data = val;
+        left = right = nullptr;
+    }
+};
+
+// Recursive search in BST
+bool searchBST(Node* root, int key) {
+    if (root == nullptr) return false;      // not found
+    if (root->data == key) return true;     // found
+    if (key < root->data) 
+        return searchBST(root->left, key);  // search left
+    else 
+        return searchBST(root->right, key); // search right
+}
+
+int main() {
+    // Manually create BST:
+    //       50
+    //      /  \
+    //     30   70
+    //    / \   / \
+    //   20 40 60 80
+    Node* root = new Node(50);
+    root->left = new Node(30);
+    root->right = new Node(70);
+    root->left->left = new Node(20);
+    root->left->right = new Node(40);
+    root->right->left = new Node(60);
+    root->right->right = new Node(80);
+
+    int key = 60;
+    cout << key << " is " << (searchBST(root, key) ? "Found" : "Not Found") << endl;
+
+    key = 25;
+    cout << key << " is " << (searchBST(root, key) ? "Found" : "Not Found") << endl;
+
+    return 0;
+}
