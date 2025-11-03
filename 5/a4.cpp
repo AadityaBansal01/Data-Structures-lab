@@ -75,3 +75,9 @@ int main() {
 
     return 0;
 }
+//Find the length and last node
+//Handle extra rotations
+//Make the list circular
+//Move to the kth node (new tail)
+//The node after that (5) is new head
+//Break the circle

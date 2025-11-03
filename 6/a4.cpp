@@ -57,3 +57,12 @@ int main() {
 
     return 0;
 }
+//Loop through list
+//Loop through list
+//curr starts at head.
+//For every node, check:
+//if (curr->random != curr->prev)
+  //  curr->random = curr->prev;
+//If the random pointer doesn’t match its prev, we fix it.
+//Keep moving forward until curr becomes NULL.
+//That’s literally it. Just a small correction loop.

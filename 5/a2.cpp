@@ -39,6 +39,7 @@ Node* reverseKGroup(Node* head, int k) {
     }
 
     // Step 3: Recurse for remaining list and connect
+    // head now becomes the tail of this group
     if (next != NULL) {
         head->next = reverseKGroup(next, k);
     }

@@ -67,3 +67,4 @@ int main() {
 
     return 0;
 }
+//diff = abs(lenA - lenB) → diff = 1

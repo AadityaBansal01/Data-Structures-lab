@@ -93,3 +93,12 @@ int main() {
 
     return 0;
 }
+//If list is empty or group size ≤ 1 → no need to reverse.
+//NULL <- 1 <-> 2 -> 3
+//Iteration 1
+//curr = 1
+//nxt = 2
+//Change 1->next to NULL (because prev is NULL initially)
+//Change 1->prev to point to 2 (since we flipped direction)
+//Move forward:
+//prev = 1, curr = 2

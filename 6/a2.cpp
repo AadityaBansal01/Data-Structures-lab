@@ -5,8 +5,8 @@ using namespace std;
 int parityCount(int n) {
     int count = 0;
     while (n) {
-        count += (n & 1);
-        n >>= 1;
+        count += (n & 1);// checks last bit
+        n >>= 1;// right shift number
     }
     return count;
 }
@@ -123,3 +123,5 @@ int main() {
 
     return 0;
 }
+//parity = number of 1s in the binary form of that number.11 → binary 1011 → has 3 ones → odd parity ✅ keep it
+//15 → binary 1111 → has 4 ones → even parity ❌ remove it
